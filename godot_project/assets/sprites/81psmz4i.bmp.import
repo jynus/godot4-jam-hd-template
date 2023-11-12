@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc6em00s7wwqi"
-path="res://.godot/imported/background.webp-fcd737716d95781e7b053a013ccb64ae.ctex"
+uid="uid://ceiwbjerdmggr"
+path="res://.godot/imported/81psmz4i.bmp-94bb4efbbb578b8a3ed30e7be294720c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/background.webp"
-dest_files=["res://.godot/imported/background.webp-fcd737716d95781e7b053a013ccb64ae.ctex"]
+source_file="res://assets/sprites/81psmz4i.bmp"
+dest_files=["res://.godot/imported/81psmz4i.bmp-94bb4efbbb578b8a3ed30e7be294720c.ctex"]
 
 [params]
 

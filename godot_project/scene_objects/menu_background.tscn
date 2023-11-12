@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://k635iu86fy37"]
 
-[ext_resource type="Texture2D" uid="uid://cc6em00s7wwqi" path="res://assets/sprites/background.webp" id="1_on8fx"]
+[ext_resource type="Texture2D" uid="uid://ceiwbjerdmggr" path="res://assets/sprites/81psmz4i.bmp" id="1_gs3nu"]
 
 [sub_resource type="Animation" id="Animation_hjc8r"]
 length = 0.001
@@ -14,7 +14,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Rect2(0, 0, 320, 180)]
+"values": [Rect2(0, 0, 1920, 1080)]
 }
 
 [sub_resource type="Animation" id="Animation_ecm3m"]
@@ -30,7 +30,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Rect2(0, 128, 320, 180), Rect2(128, 0, 320, 180)]
+"values": [Rect2(0, 0, 1920, 1080), Rect2(600, 600, 1920, 1080)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_as2xe"]
@@ -42,17 +42,22 @@ _data = {
 [node name="backgroudMenu" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 320.0
-offset_bottom = 180.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 1, 1, 1)
 
 [node name="animatedSprite" type="Sprite2D" parent="."]
 self_modulate = Color(0, 1, 1, 0.501961)
 texture_repeat = 2
-texture = ExtResource("1_on8fx")
+texture = ExtResource("1_gs3nu")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 320, 180)
+region_rect = Rect2(0, 0, 1920, 1080)
 
 [node name="backgroundAnimation" type="AnimationPlayer" parent="."]
 root_node = NodePath("../animatedSprite")
