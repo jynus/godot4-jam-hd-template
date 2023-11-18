@@ -61,3 +61,10 @@ func unpause_game():
 	paused = false
 	get_tree().paused = false
 	BackgroundMusic.play_song(previous_music, previous_music_offset)
+
+
+func _on_reset_level_button_pressed():
+	blip.play()
+	await blip.finished
+	unpause_game()
+	get_tree().reload_current_scene()

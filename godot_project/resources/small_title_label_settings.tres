@@ -4,4 +4,5 @@
 
 [resource]
 font = ExtResource("1_usnwb")
+font_size = 100
 shadow_size = 0

@@ -37,11 +37,11 @@ script = ExtResource("1_o3suw")
 [node name="background" parent="." instance=ExtResource("2_pa7y0")]
 
 [node name="menuContainer" type="VBoxContainer" parent="."]
-offset_right = 320.0
-offset_bottom = 180.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
 [node name="topMargin" type="MarginContainer" parent="menuContainer"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
 [node name="title" type="Label" parent="menuContainer"]
@@ -51,13 +51,17 @@ text = "Credits"
 label_settings = ExtResource("1_c4tx6")
 horizontal_alignment = 1
 
+[node name="topMargin2" type="MarginContainer" parent="menuContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
 [node name="optionsContainer" type="HBoxContainer" parent="menuContainer"]
 layout_mode = 2
 size_flags_vertical = 2
 alignment = 1
 
 [node name="leftMargin" type="MarginContainer" parent="menuContainer/optionsContainer"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 
 [node name="creditsContainer" type="VBoxContainer" parent="menuContainer/optionsContainer"]
@@ -66,19 +70,19 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 
 [node name="creditsText" type="RichTextLabel" parent="menuContainer/optionsContainer/creditsContainer"]
-custom_minimum_size = Vector2(0, 90)
+custom_minimum_size = Vector2(0, 600)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_constants/line_separation = 4
+theme_override_constants/line_separation = 25
 theme_override_fonts/normal_font = ExtResource("3_6rbj4")
 theme_override_fonts/bold_font = ExtResource("4_f8v2u")
-theme_override_font_sizes/normal_font_size = 8
-theme_override_font_sizes/bold_font_size = 8
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 60
 bbcode_enabled = true
 text = "[center][b]Design & programming[/b]:
 
-Jynus
+*your name*
 
  * Made with Godot 4 in 48 hours for the Game Jam *
 
@@ -89,7 +93,7 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="twitterButton" type="Button" parent="menuContainer/optionsContainer/socialButtonContainer"]
-custom_minimum_size = Vector2(25, 25)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -107,7 +111,7 @@ icon = ExtResource("7_5hy4m")
 icon_alignment = 1
 
 [node name="itchioButton" type="Button" parent="menuContainer/optionsContainer/socialButtonContainer"]
-custom_minimum_size = Vector2(25, 25)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -125,7 +129,7 @@ icon = ExtResource("8_0bwxl")
 icon_alignment = 1
 
 [node name="webButton" type="Button" parent="menuContainer/optionsContainer/socialButtonContainer"]
-custom_minimum_size = Vector2(25, 25)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -143,15 +147,17 @@ icon = ExtResource("9_g2a5j")
 icon_alignment = 1
 
 [node name="rightMargin" type="MarginContainer" parent="menuContainer/optionsContainer"]
-custom_minimum_size = Vector2(75, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 
 [node name="doneButton" parent="menuContainer" instance=ExtResource("13_25eo3")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(700, 75)
 layout_mode = 2
+theme_override_font_sizes/font_size = 45
 
 [node name="bottomMargin" type="MarginContainer" parent="menuContainer"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="blip" parent="." instance=ExtResource("13_4wf1y")]

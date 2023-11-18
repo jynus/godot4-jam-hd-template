@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://scripts/level_button.gd" id="7_qsbpd"]
 
 [node name="level_button" type="Button"]
-custom_minimum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(250, 150)
 offset_left = -19.0
 offset_top = -12.0
 offset_right = 19.0
@@ -19,7 +19,7 @@ size_flags_vertical = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(0.431373, 0.427451, 0.427451, 1)
 theme_override_fonts/font = ExtResource("1_6l6ud")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = ExtResource("3_g2lte")
 theme_override_styles/hover = ExtResource("4_o6xu0")
 theme_override_styles/pressed = ExtResource("5_faphc")

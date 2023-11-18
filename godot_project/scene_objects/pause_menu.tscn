@@ -11,8 +11,8 @@ process_mode = 3
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 script = ExtResource("1_3hvvb")
 
 [node name="background" type="ColorRect" parent="."]
@@ -37,7 +37,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="LeftMargin" type="MarginContainer" parent="background/pauseMenu"]
-custom_minimum_size = Vector2(70, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="background/pauseMenu"]
@@ -51,24 +51,50 @@ text = "Pause"
 label_settings = ExtResource("1_o8dpe")
 horizontal_alignment = 1
 
-[node name="returnButton" parent="background/pauseMenu/VBoxContainer" instance=ExtResource("1_fht2j")]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 0)
+[node name="Margin4" type="MarginContainer" parent="background/pauseMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+
+[node name="returnButton2" parent="background/pauseMenu/VBoxContainer" instance=ExtResource("1_fht2j")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Return to game"
 
-[node name="settingsButton" parent="background/pauseMenu/VBoxContainer" instance=ExtResource("1_fht2j")]
-custom_minimum_size = Vector2(150, 0)
+[node name="Margin1" type="MarginContainer" parent="background/pauseMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+
+[node name="resetLevelButton" parent="background/pauseMenu/VBoxContainer" instance=ExtResource("1_fht2j")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Reset level"
+
+[node name="Margin2" type="MarginContainer" parent="background/pauseMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="settingsButton" parent="background/pauseMenu/VBoxContainer" instance=ExtResource("1_fht2j")]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Settings"
 
-[node name="mainMenuButton" parent="background/pauseMenu/VBoxContainer" instance=ExtResource("1_fht2j")]
-custom_minimum_size = Vector2(150, 0)
+[node name="Margin3" type="MarginContainer" parent="background/pauseMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+
+[node name="mainMenuButton" parent="background/pauseMenu/VBoxContainer" instance=ExtResource("1_fht2j")]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Back to main menu"
 
 [node name="RightMargin" type="MarginContainer" parent="background/pauseMenu"]
-custom_minimum_size = Vector2(70, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
 [node name="settings" parent="." instance=ExtResource("4_cgqpe")]
@@ -77,6 +103,7 @@ visible = false
 
 [node name="blip" parent="." instance=ExtResource("5_cwhfe")]
 
-[connection signal="pressed" from="background/pauseMenu/VBoxContainer/returnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="background/pauseMenu/VBoxContainer/returnButton2" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="background/pauseMenu/VBoxContainer/resetLevelButton" to="." method="_on_reset_level_button_pressed"]
 [connection signal="pressed" from="background/pauseMenu/VBoxContainer/settingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="background/pauseMenu/VBoxContainer/mainMenuButton" to="." method="_on_main_menu_button_pressed"]
