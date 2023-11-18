@@ -62,7 +62,7 @@ label_settings = ExtResource("3_0kf2n")
 horizontal_alignment = 1
 
 [node name="optionsMargin" type="MarginContainer" parent="menuContainer"]
-custom_minimum_size = Vector2(0, 75)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="Language" type="HBoxContainer" parent="menuContainer"]
@@ -171,15 +171,30 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/h_separation = 50
-theme_override_constants/check_v_offset = 10
-theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_oogrs")
 theme_override_font_sizes/font_size = 75
 text = "Full screen"
 icon_alignment = 1
 
 [node name="margin1" type="MarginContainer" parent="menuContainer"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="vsync" type="CheckBox" parent="menuContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/h_separation = 50
+theme_override_constants/check_v_offset = 10
+theme_override_fonts/font = ExtResource("4_oogrs")
+theme_override_font_sizes/font_size = 75
+text = "Vsync"
+icon_alignment = 1
+
+[node name="margin4" type="MarginContainer" parent="menuContainer"]
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 
 [node name="doneButton" type="Button" parent="menuContainer"]
@@ -206,4 +221,5 @@ text = "Done"
 [connection signal="value_changed" from="menuContainer/music/musicVolume" to="." method="_on_music_volume_value_changed"]
 [connection signal="value_changed" from="menuContainer/sfx/sfxVolume" to="." method="_on_sfx_volume_value_changed"]
 [connection signal="toggled" from="menuContainer/fullScreenCheckbox" to="." method="_on_full_screen_checkbox_toggled"]
+[connection signal="toggled" from="menuContainer/vsync" to="." method="_on_vsync_toggled"]
 [connection signal="pressed" from="menuContainer/doneButton" to="." method="_on_done_button_pressed"]

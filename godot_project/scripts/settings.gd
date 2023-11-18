@@ -30,6 +30,9 @@ func _ready():
 	full_screen_checkbox.set_pressed_no_signal(
 		DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
 	)
+	full_screen_checkbox.set_pressed_no_signal(
+		DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED
+	)
 	music_volume.set_value_no_signal(db_to_linear(AudioServer.get_bus_volume_db(music_bus_index)))
 	sfx_volume.set_value_no_signal(db_to_linear(AudioServer.get_bus_volume_db(sfx_bus_index)))
 	language_option.select(1 if TranslationServer.get_locale().begins_with("es") else 0)
@@ -42,6 +45,8 @@ func load_settings():
 	# apply settings
 	var window_mode = _configFile.get_value("settings", "window_mode", DisplayServer.WINDOW_MODE_WINDOWED)
 	set_window_mode(window_mode)
+	var vsync_mode = _configFile.get_value("settings", "vsync_mode", DisplayServer.VSYNC_DISABLED)
+	set_window_mode(vsync_mode)
 	var music_volume_config = _configFile.get_value("settings", "music_volume", default_volume)
 	set_volume("music", music_volume_config)
 	var sfx_volume_config = _configFile.get_value("settings", "sfx_volume", default_volume)
@@ -61,6 +66,9 @@ func hide_settings():
 func set_window_mode(custom_window_mode : DisplayServer.WindowMode):
 	DisplayServer.window_set_mode(custom_window_mode)
 
+func set_vsync_mode(vsync_mode : DisplayServer.VSyncMode):
+	DisplayServer.window_set_vsync_mode(vsync_mode)
+
 func set_config(key: String, value):
 	_configFile.set_value("settings", key, value)
 	_configFile.save(SETTINGS_FILE_PATH)
@@ -69,6 +77,11 @@ func apply_fullscreen(fullscreen : bool):
 	var window_mode = DisplayServer.WINDOW_MODE_FULLSCREEN if fullscreen else DisplayServer.WINDOW_MODE_WINDOWED
 	set_window_mode(window_mode)
 	set_config("window_mode", window_mode)
+
+func apply_vsync(vsync : bool):
+	var vsync_mode = DisplayServer.VSYNC_ENABLED if vsync else DisplayServer.VSYNC_DISABLED
+	set_vsync_mode(vsync_mode)
+	set_config("vsync", vsync_mode)
 
 func _on_done_button_pressed():
 	blip.play()
@@ -118,3 +131,8 @@ func _on_language_option_item_selected(index):
 	else:
 		print("Setting language to Spanish")
 		apply_language("es")
+
+
+func _on_vsync_toggled(button_pressed):
+	blip.play()
+	apply_vsync(button_pressed)
